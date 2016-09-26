@@ -12,7 +12,6 @@ if __name__ == "__main__":
     lineas = fich.readlines()
     fich.close()
     calculadora = calcoohija.CalculadoraHija()
-    
     for linea in lineas:
         elementos = linea.split(',')
         operacion = elementos[0]
