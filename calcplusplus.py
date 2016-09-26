@@ -12,7 +12,7 @@ if __name__ == "__main__":
         calculadora = calcoohija.CalculadoraHija()
         for linea in lineas:
             operacion = linea[0]
-            linea.pop(0) 
+            linea.pop(0)
             if operacion == "suma":
                 result = int(0)
                 for op in linea:

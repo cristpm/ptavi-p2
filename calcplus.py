@@ -4,19 +4,19 @@
 import sys
 import calcoo
 import calcoohija
-		
-		
+
+
 if __name__ == "__main__":
 
-    fich=open('fichero','r')
-    lineas =fich.readlines()## guarda cada linea del fichero en una lista
+    fich = open('fichero', 'r')
+    lineas = fich.readlines()
     fich.close()
     calculadora = calcoohija.CalculadoraHija()
     
     for linea in lineas:
-        elementos = linea.split(',')## lista con cada caracter
+        elementos = linea.split(',')
         operacion = elementos[0]
-        elementos.pop(0)##elimitamos la operacion de la lista
+        elementos.pop(0)
         if operacion == "suma":
             result = int(0)
             for op in elementos:
@@ -26,20 +26,20 @@ if __name__ == "__main__":
             result = int(elementos[0])
             elementos.pop(0)
             for op in elementos:
-                result = calculadora.minus(result,int(op))
+                result = calculadora.minus(result, int(op))
             print(result)
         elif operacion == "multiplica":
             result = int(elementos[0])
             elementos.pop(0)
             for op in elementos:
-                result = calculadora.multiply(result,int(op))
+                result = calculadora.multiply(result, int(op))
             print(result)
         elif operacion == "divide":
             result = int(elementos[0])
             elementos.pop(0)
             for op in elementos:
                 try:
-                    result = calculadora.div(result,int(op))
+                    result = calculadora.div(result, int(op))
                 except ZeroDivisionError:
                     sys.exit("Division by zero is not allowed")
             print(result)
